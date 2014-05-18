@@ -1,0 +1,13 @@
+PODS:
+  - ADCExtensions (1.0.0)
+  - MAKVONotificationCenter (0.0.2)
+
+DEPENDENCIES:
+  - ADCExtensions
+  - MAKVONotificationCenter
+
+SPEC CHECKSUMS:
+  ADCExtensions: 7855ea61d4bebd8e0116af3873b61f0375fb26ad
+  MAKVONotificationCenter: 59483dddd3a24446987b72fbd8fe5af1a4457180
+
+COCOAPODS: 0.32.1

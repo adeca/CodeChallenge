@@ -1,0 +1,1 @@
+../../ADCExtensions/ADCExtensions/UICollectionViewCell+ADC.h

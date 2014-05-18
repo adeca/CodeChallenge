@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="5063" systemVersion="13C1021" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="CCCategory" representedClassName="CCCategory" syncable="YES">
+        <attribute name="headCategory" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="lastUpdated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="oid" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="photoVersion" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="servingsCategory" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <relationship name="food" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CCFood" inverseName="category" inverseEntity="CCFood" syncable="YES"/>
+        <relationship name="name" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="CCCategoryName" inverseName="category" inverseEntity="CCCategoryName" syncable="YES"/>
+    </entity>
+    <entity name="CCCategoryName" representedClassName="CCCategoryName" parentEntity="CCName" syncable="YES">
+        <relationship name="category" maxCount="1" deletionRule="Nullify" destinationEntity="CCCategory" inverseName="name" inverseEntity="CCCategory" syncable="YES"/>
+    </entity>
+    <entity name="CCExercise" representedClassName="CCExercise" syncable="YES">
+        <attribute name="addedByUser" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="calories" optional="YES" attributeType="Double" syncable="YES"/>
+        <attribute name="custom" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="deleted" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="downloaded" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="hidden" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="lastUpdated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="oid" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="photoVersion" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="name" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="CCExerciseName" inverseName="exercise" inverseEntity="CCExerciseName" syncable="YES"/>
+    </entity>
+    <entity name="CCExerciseName" representedClassName="CCExerciseName" parentEntity="CCName" syncable="YES">
+        <relationship name="exercise" maxCount="1" deletionRule="Nullify" destinationEntity="CCExercise" inverseName="name" inverseEntity="CCExercise" syncable="YES"/>
+    </entity>
+    <entity name="CCFood" representedClassName="CCFood" syncable="YES">
+        <attribute name="addedByUser" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="brand" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="calories" optional="YES" attributeType="Double" syncable="YES"/>
+        <attribute name="carbohydrates" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="cholesterol" optional="YES" attributeType="Double" syncable="YES"/>
+        <attribute name="custom" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="defaultSize" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="deleted" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="downloaded" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="fat" optional="YES" attributeType="Double" syncable="YES"/>
+        <attribute name="fiber" optional="YES" attributeType="Double" syncable="YES"/>
+        <attribute name="gramsPerMilliliter" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="gramsPerPiece" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="gramsPerServing" optional="YES" attributeType="Double" syncable="YES"/>
+        <attribute name="hidden" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="language" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="lastUpdated" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="locale" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="oid" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="pieceDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="potasium" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="protein" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="saturatedFat" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="servingsCategory" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="showMeasurement" optional="YES" attributeType="Integer 16" syncable="YES"/>
+        <attribute name="showOnlySameType" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="sodium" optional="YES" attributeType="Double" syncable="YES"/>
+        <attribute name="sourceId" optional="YES" attributeType="Integer 32" syncable="YES"/>
+        <attribute name="sugar" optional="YES" attributeType="Double" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="typeOfMeasurement" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="unsaturatedFat" optional="YES" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CCCategory" inverseName="food" inverseEntity="CCCategory" syncable="YES"/>
+    </entity>
+    <entity name="CCName" representedClassName="CCName" isAbstract="YES" syncable="YES">
+        <attribute name="da" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="de" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="en" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="es" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fi" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="fr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="it" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="no" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pt" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="ru" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="sv" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="CCCategory" positionX="-54" positionY="81" width="128" height="148"/>
+        <element name="CCCategoryName" positionX="-18" positionY="99" width="128" height="28"/>
+        <element name="CCExercise" positionX="-36" positionY="90" width="128" height="193"/>
+        <element name="CCExerciseName" positionX="0" positionY="108" width="128" height="58"/>
+        <element name="CCFood" positionX="18" positionY="162" width="128" height="538"/>
+        <element name="CCName" positionX="-63" positionY="-18" width="128" height="28"/>
+    </elements>
+</model>

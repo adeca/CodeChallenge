@@ -28,9 +28,9 @@
 
 - (void)setupCoreDataStack
 {
-#ifdef DEBUG
-    [self clearCoreDataStack];
-#endif
+//#ifdef DEBUG
+//    [self clearCoreDataStack];
+//#endif
     
     self.managedObjectContext = nil;
     self.managedObjectModel = nil;

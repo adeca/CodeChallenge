@@ -29,3 +29,5 @@ Many categories with convenience methods have been created. These methods encaps
 The visual aspect of the application leaves much to be desired. This is due to a conscious decision to prioritize the business logic and architecture parts of the application. The view model system does make it simpler to update the UI without risk of affecting the existing logic.
 
 Testing is non-existant. While TDD will certainly help in typical projects, I decided that such a short and complex task would not be acheivable if I spent my time working on tests. Some TDD experts might disagree.
+
+I always strive to have my code be as much 'self-documenting' as possible, by making classes and methods with single purposes, but there's always room for more documentation on how a class can be interacted with: i.e. usage information and assumptions.
